@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Career Coaching – West Tech Solutions</title>
+  <meta name="description" content="Career coaching for breaking into IT/cloud and leveling up in tech." />
+
+  <style>
+    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif; background:#f4f6f8; color:#111; line-height:1.65; }
+    .container { max-width:980px; margin:60px auto; background:#fff; padding:56px; border-radius:12px; box-shadow:0 12px 34px rgba(0,0,0,0.07); }
+    nav { display:flex; justify-content:space-between; align-items:center; gap:16px; margin-bottom:40px; }
+    .brand { font-weight:650; }
+    .navlinks a { margin-left:14px; color:#111; text-decoration:none; font-weight:500; }
+    .navlinks a:hover { text-decoration:underline; }
+    h1 { margin:0 0 10px 0; font-size:2.1rem; }
+    .subtitle { margin:0 0 28px 0; color:#555; max-width:780px; }
+    h2 { margin:44px 0 12px 0; font-size:1.25rem; }
+    ul { padding-left:20px; max-width:820px; }
+    li { margin-bottom:10px; }
+    .card { border:1px solid #e6e8eb; border-radius:12px; padding:22px; margin-top:16px; background:#fff; }
+    .btn { display:inline-block; margin-top:14px; padding:10px 14px; border-radius:10px; border:1px solid #0b5cff; color:#0b5cff; text-decoration:none; font-weight:600; }
+    .btn.primary { background:#0b5cff; color:#fff; }
+    .btn.primary:hover { background:#094fe0; }
+    .btn:hover { background:#f0f5ff; }
+    .divider { margin:44px 0; border-bottom:1px solid #e6e8eb; }
+    footer { color:#666; font-size:0.9rem; margin-top:40px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <nav>
+      <div class="brand"><a href="index.html" style="color:#111; text-decoration:none;">West Tech Solutions</a></div>
+      <div class="navlinks">
+        <a href="/consulting/">Consulting</a>
+        <a href="/coaching/">Career Coaching</a>
+        <a href="mailto:hello@westtechsolutions.net">Contact</a>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Career Coaching for Tech Professionals</h1>
+      <p class="subtitle">
+        Coaching for people breaking into IT/cloud and leveling up in tech.
+        Resumes, LinkedIn, interview prep, and a clear plan based on your background.
+      </p>
+      <a class="btn primary" href="mailto:hello@westtechsolutions.net?subject=Career%20Coaching%20Inquiry">Contact for Coaching</a>
+    </header>
+
+    <div class="divider"></div>
+
+    <section>
+      <h2>What I Help With</h2>
+      <ul>
+        <li><strong>Break-into-tech plan:</strong> a realistic roadmap based on your goals and timeline.</li>
+        <li><strong>Resume & LinkedIn:</strong> positioning that gets interviews, not just “looks nice.”</li>
+        <li><strong>Interview prep:</strong> practical mock interviews and story coaching.</li>
+        <li><strong>Skill-building guidance:</strong> projects, labs, and what to learn next (without wasting time).</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2 style="margin-top:0;">How Coaching Works</h2>
+      <ul>
+        <li><strong>Step 1:</strong> quick intake (your background, goals, timeline)</li>
+        <li><strong>Step 2:</strong> strategy call + prioritized plan</li>
+        <li><strong>Step 3:</strong> execution support (resume, LinkedIn, interviews, accountability)</li>
+      </ul>
+      <a class="btn" href="mailto:hello@westtechsolutions.net?subject=Coaching%20Availability">Ask About Availability</a>
+    </section>
+
+    <section>
+      <h2>Who This Is For</h2>
+      <ul>
+        <li>People moving from customer service/helpdesk into IT</li>
+        <li>Early-career tech professionals leveling up</li>
+        <li>Career switchers who need a clear, realistic plan</li>
+      </ul>
+    </section>
+
+    <footer>
+      © <span id="year"></span> West Tech Solutions • <a href="mailto:hello@westtechsolutions.net">hello@westtechsolutions.net</a>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </div>
+</body>
+</html>
