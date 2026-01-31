@@ -3,137 +3,171 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>West Tech Solutions LLC</title>
+  <title>West Tech Solutions</title>
+  <meta name="description" content="Independent cloud, DevOps, and IT consulting — plus career coaching for professionals breaking into tech." />
 
   <style>
     body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI",
-        Roboto, Helvetica, Arial, sans-serif;
-      max-width: 900px;
-      margin: 0 auto;
-      padding: 60px 20px;
-      line-height: 1.65;
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      background: #f4f6f8;
       color: #111;
-      background-color: #fff;
+      line-height: 1.65;
     }
-
-    header {
-      margin-bottom: 60px;
+    .container {
+      max-width: 980px;
+      margin: 60px auto;
+      background: #fff;
+      padding: 56px;
+      border-radius: 12px;
+      box-shadow: 0 12px 34px rgba(0,0,0,0.07);
     }
-
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      font-weight: 600;
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 40px;
     }
-
-    h2 {
-      margin-top: 60px;
-      margin-bottom: 15px;
-      font-size: 1.3rem;
-      font-weight: 600;
+    .brand {
+      font-weight: 650;
+      letter-spacing: 0.2px;
     }
-
-    p {
-      max-width: 720px;
-      margin-bottom: 20px;
-    }
-
-    .subtitle {
-      font-size: 1.05rem;
-      color: #444;
-    }
-
-    ul {
-      padding-left: 20px;
-      max-width: 720px;
-    }
-
-    li {
-      margin-bottom: 10px;
-    }
-
-    .divider {
-      margin: 50px 0;
-      border-bottom: 1px solid #e5e5e5;
-    }
-
-    footer {
-      margin-top: 70px;
-      font-size: 0.95rem;
-      color: #555;
-    }
-
-    a {
-      color: #0052cc;
+    .navlinks a {
+      margin-left: 14px;
+      color: #111;
       text-decoration: none;
+      font-weight: 500;
     }
+    .navlinks a:hover { text-decoration: underline; }
 
-    a:hover {
-      text-decoration: underline;
+    h1 { font-size: 2.3rem; margin: 0 0 10px 0; }
+    .subtitle { color: #555; font-size: 1.05rem; margin: 0 0 22px 0; max-width: 760px; }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+      margin-top: 30px;
     }
+    @media (min-width: 850px) {
+      .grid { grid-template-columns: 1fr 1fr; gap: 22px; }
+    }
+    .card {
+      border: 1px solid #e6e8eb;
+      border-radius: 12px;
+      padding: 22px;
+      background: #fff;
+    }
+    .card h2 { margin: 0 0 10px 0; font-size: 1.25rem; }
+    .card p { margin: 0 0 14px 0; color: #444; }
+    .pill {
+      display: inline-block;
+      font-size: 0.85rem;
+      border: 1px solid #e6e8eb;
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: #333;
+      margin: 0 8px 10px 0;
+      background: #fafbfc;
+    }
+    .btnrow { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .btn {
+      display: inline-block;
+      padding: 10px 14px;
+      border-radius: 10px;
+      border: 1px solid #0b5cff;
+      color: #0b5cff;
+      text-decoration: none;
+      font-weight: 600;
+      background: #fff;
+    }
+    .btn:hover { background: #f0f5ff; }
+    .btn.primary {
+      background: #0b5cff;
+      color: #fff;
+    }
+    .btn.primary:hover { background: #094fe0; }
+
+    .divider { margin: 44px 0; border-bottom: 1px solid #e6e8eb; }
+    footer { color: #666; font-size: 0.9rem; margin-top: 40px; }
+    a { color: #0b5cff; }
   </style>
 </head>
 <body>
+  <div class="container">
+    <nav>
+      <div class="brand">West Tech Solutions</div>
+      <div class="navlinks">
+        <a href="consulting.html">Consulting</a>
+        <a href="coaching.html">Career Coaching</a>
+        <a href="mailto:hello@westtechsolutions.net">Contact</a>
+      </div>
+    </nav>
 
-  <header>
-    <h1>West Tech Solutions</h1>
-    <p class="subtitle">
-      <strong>Cloud, DevOps & IT Consulting</strong>
-    </p>
+    <header>
+      <h1>Cloud, DevOps & IT Consulting — and Career Coaching</h1>
+      <p class="subtitle">
+        I’m David West. I work with organizations to build secure, reliable infrastructure,
+        and I help individuals break into tech and level up their careers. Choose the path that fits what you need.
+      </p>
+    </header>
 
-    <p>
-      I’m David West, an independent consultant specializing in cloud, DevOps,
-      and IT systems. I work directly with organizations to design, secure,
-      and operate technology environments that are reliable, maintainable,
-      and fit for real-world use.
-    </p>
-  </header>
+    <div class="grid">
+      <section class="card">
+        <h2>For Businesses</h2>
+        <p>
+          Hands-on consulting for cloud architecture, DevOps automation, infrastructure as code,
+          security hardening, and practical IT improvements.
+        </p>
+        <div>
+          <span class="pill">Cloud Architecture</span>
+          <span class="pill">DevOps / CI/CD</span>
+          <span class="pill">IaC</span>
+          <span class="pill">Security</span>
+          <span class="pill">IT Systems</span>
+        </div>
+        <div class="btnrow">
+          <a class="btn primary" href="consulting.html">View Consulting</a>
+          <a class="btn" href="mailto:hello@westtechsolutions.net?subject=Consulting%20Inquiry">Email Me</a>
+        </div>
+      </section>
 
-  <section>
-    <h2>What I Do</h2>
-    <ul>
-      <li>Cloud architecture design, migrations, and modernization</li>
-      <li>DevOps and CI/CD pipeline implementation</li>
-      <li>Infrastructure as Code deployments (Terraform, ARM, CloudFormation)</li>
-      <li>Cloud and IT security hardening and best practices</li>
-      <li>General IT consulting and systems guidance</li>
-    </ul>
-  </section>
+      <section class="card">
+        <h2>For Professionals</h2>
+        <p>
+          Coaching for people breaking into IT/cloud and advancing their careers —
+          resumes, LinkedIn, interview prep, and a clear plan.
+        </p>
+        <div>
+          <span class="pill">Break Into Tech</span>
+          <span class="pill">Resume & LinkedIn</span>
+          <span class="pill">Interview Prep</span>
+          <span class="pill">Career Roadmaps</span>
+        </div>
+        <div class="btnrow">
+          <a class="btn primary" href="coaching.html">View Coaching</a>
+          <a class="btn" href="mailto:hello@westtechsolutions.net?subject=Career%20Coaching%20Inquiry">Email Me</a>
+        </div>
+      </section>
+    </div>
 
-  <div class="divider"></div>
+    <div class="divider"></div>
 
-  <section>
-    <h2>How I Work</h2>
-    <p>
-      I operate as a hands-on extension of your team.
-      Engagements are straightforward and collaborative, with an emphasis on
-      clear outcomes and sustainable solutions.
-      You work directly with me from planning through delivery.
-   </p>
-  </section>
+    <section>
+      <h2 style="margin:0 0 10px 0;">Direct, practical work</h2>
+      <p style="margin:0; color:#444; max-width:760px;">
+        You work directly with me. I keep engagements straightforward, focused on outcomes,
+        and designed to leave you with systems (or a career plan) that you can sustain long-term.
+      </p>
+    </section>
 
-  <div class="divider"></div>
+    <footer>
+      © <span id="year"></span> West Tech Solutions • <a href="mailto:hello@westtechsolutions.net">hello@westtechsolutions.net</a>
+    </footer>
 
-  <section>
-    <h2>Contact</h2>
-    <p>
-      If you’re interested in working together, the simplest way to reach me is by email:
-    </p>
-    <p>
-      <strong>
-        <a href="mailto:david@westtechsolutions.net">david@westtechsolutions.net</a>
-      </strong>
-    </p>
-  </section>
-
-  <footer>
-    © <span id="year"></span> West Tech Solutions LLC
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+  </div>
 </body>
 </html>
