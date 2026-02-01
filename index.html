@@ -864,29 +864,36 @@
     });
 
     // Handle form submission
-    function handleSubmit(e) {
-        e.preventDefault();
-        
-        // Get form data
-        const formData = new FormData(e.target);
-        const data = Object.fromEntries(formData);
-        
-        // Here you would normally send this to a backend or service like:
-        // - Formspree (https://formspree.io)
-        // - EmailJS (https://www.emailjs.com)
-        // - Your own backend API
-        
-        // For now, we'll just show a success message
-        console.log('Form submitted:', data);
-        
-        // Show success message
-        document.getElementById('formSuccess').classList.add('active');
-        
-        // Reset form after 3 seconds and close modal
-        setTimeout(() => {
-            closeModal();
-        }, 3000);
-    }
+ function handleSubmit(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    formData.append('access_key', '3374d49b-488e-4bf9-8a73-a65d73a3b182');
+    
+    // Optional: Customize the email subject
+    formData.append('subject', 'New Contact Form Submission from West Tech Solutions');
+    
+    fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            document.getElementById('formSuccess').classList.add('active');
+            document.getElementById('contactForm').reset();
+            setTimeout(() => {
+                closeModal();
+            }, 3000);
+        } else {
+            alert('There was a problem submitting the form. Please try again.');
+        }
+    })
+    .catch(error => {
+        alert('There was a problem submitting the form. Please try again.');
+        console.error('Error:', error);
+    });
+}
 
     // Update all consultation links to open modal
     document.addEventListener('DOMContentLoaded', function() {
