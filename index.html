@@ -374,10 +374,13 @@
         }
 
         .contact-item a {
-            color: var(--text-primary);
+            color: var(--text-secondary);
             text-decoration: none;
             font-size: 1.1rem;
+            font-weight: 300;
             transition: color 0.3s ease;
+            width: 100%;
+            height: 100%;
         }
 
         .contact-item a:hover {
@@ -406,8 +409,8 @@
 /* Photo container on right - CIRCULAR */
 .contact-photo {
     flex-shrink: 0;
-    width: 280px;
-    height: 280px;
+    width: 380px;
+    height: 380px;
 }
 
 .contact-photo img {
@@ -415,7 +418,6 @@
     height: 100%;
     object-fit: cover;  /* Makes sure image fills circle properly */
     border-radius: 50%;  /* Makes it circular */
-    border: 3px solid var(--accent);
     transition: all 0.3s ease;
 }
 
