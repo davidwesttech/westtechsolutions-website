@@ -57,7 +57,26 @@
             color: var(--accent);
             letter-spacing: 0.5px;
         }
+<nav>  
+    <!-- Add this hamburger button -->
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+    
+    <ul class="nav-links">
+        <li><a href="#consulting">Consulting</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
 
+<!-- Add mobile menu (put this right after </nav>) -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+    <a href="#consulting" onclick="toggleMobileMenu()">Consulting</a>
+    <a href="#coaching" onclick="toggleMobileMenu()">Coaching</a>
+    <a href="#about" onclick="toggleMobileMenu()">About</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+</div>
         .nav-links {
             display: flex;
             gap: 3rem;
@@ -384,62 +403,147 @@
         .footer-links a:hover {
             color: var(--accent);
         }
+       /* Responsive */
+@media (max-width: 968px) {
+    nav {
+        padding: 1.5rem 5%;
+    }
 
-        /* Responsive */
-        @media (max-width: 968px) {
-            nav {
-                padding: 1.5rem 5%;
-            }
+    .nav-links {
+        gap: 2rem;
+    }
 
-            .nav-links {
-                gap: 2rem;
-            }
+    .hero, .services, .about, .contact {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
 
-            .hero, .services, .about, .contact {
-                padding-left: 5%;
-                padding-right: 5%;
-            }
+    .divider {
+        margin: 0 5%;
+    }
 
-            .divider {
-                margin: 0 5%;
-            }
+    .service-content {
+        padding-left: 0;
+    }
 
-            .service-content {
-                padding-left: 0;
-            }
+    .service-header {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
 
-            .service-header {
-                flex-direction: column;
-                gap: 0.5rem;
-            }
+    .hero-cta {
+        flex-direction: column;
+    }
 
-            .hero-cta {
-                flex-direction: column;
-            }
+    .btn {
+        width: 100%;
+        text-align: center;
+    }
 
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-        }
+    /* Make service grid single column on tablets */
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+}
 
-        @media (max-width: 640px) {
-            .nav-links {
-                display: none;
-            }
+@media (max-width: 640px) {
+    /* Hide navigation links on mobile */
+    .nav-links {
+        display: none;
+    }
 
-            .footer-content {
-                flex-direction: column;
-                gap: 2rem;
-                text-align: center;
-            }
+    /* Mobile hamburger menu button */
+    .mobile-menu-btn {
+        display: block !important;
+        background: transparent;
+        border: 1px solid var(--accent);
+        color: var(--accent);
+        font-size: 1.5rem;
+        padding: 0.5rem 0.75rem;
+        cursor: pointer;
+        line-height: 1;
+    }
 
-            .footer-links {
-                flex-direction: column;
-                gap: 1rem;
-            }
-        }
+    /* Mobile menu overlay */
+    .mobile-menu {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--bg-dark);
+        z-index: 999;
+        padding: 2rem;
+        flex-direction: column;
+        gap: 2rem;
+    }
 
+    .mobile-menu.active {
+        display: flex;
+    }
+
+    .mobile-menu a {
+        color: var(--text-primary);
+        text-decoration: none;
+        font-size: 1.5rem;
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .mobile-menu-close {
+        align-self: flex-end;
+        background: transparent;
+        border: none;
+        color: var(--accent);
+        font-size: 2rem;
+        cursor: pointer;
+    }
+
+    /* Make modal full-screen on mobile */
+    .modal-content {
+        width: 100%;
+        height: 100vh;
+        max-width: 100%;
+        padding: 2rem;
+        overflow-y: auto;
+    }
+
+    .footer-content {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    /* Reduce padding on mobile */
+    .services, .about, .contact {
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+    }
+
+    .service-block {
+        margin-bottom: 4rem;
+    }
+
+    /* Smaller headings on mobile */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+}
+
+/* Hidden by default, shown on mobile */
+.mobile-menu-btn {
+    display: none;
+}
         /* Animations */
         @keyframes fadeIn {
             from {
@@ -897,7 +1001,12 @@
         console.error('Error:', error);
     });
 }
-
+// Mobile menu toggle
+function toggleMobileMenu() {
+    const menu = document.getElementById('mobileMenu');
+    menu.classList.toggle('active');
+    document.body.style.overflow = menu.classList.contains('active') ? 'hidden' : 'auto';
+}
     // Update all consultation links to open modal
     document.addEventListener('DOMContentLoaded', function() {
         // Get all links that should open the modal
