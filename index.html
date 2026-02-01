@@ -387,6 +387,42 @@
     display: block;
     text-decoration: none;
 }
+        /* Contact wrapper - buttons LEFT, photo RIGHT */
+.contact-wrapper {
+    display: flex;
+    gap: 4rem;
+    align-items: center;
+    margin-top: 3rem;
+}
+
+/* Contact methods on left */
+.contact-methods {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    flex: 1;
+}
+
+/* Photo container on right - CIRCULAR */
+.contact-photo {
+    flex-shrink: 0;
+    width: 280px;
+    height: 280px;
+}
+
+.contact-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Makes sure image fills circle properly */
+    border-radius: 50%;  /* Makes it circular */
+    border: 3px solid var(--accent);
+    transition: all 0.3s ease;
+}
+
+.contact-photo img:hover {
+    border-color: var(--text-primary);
+    transform: scale(1.05);
+}
         /* Footer */
         footer {
             padding: 4rem 6%;
@@ -472,6 +508,17 @@
 }
 
 @media (max-width: 640px) {
+    /* Stack photo on top on mobile */
+    .contact-wrapper {
+        flex-direction: column-reverse;  /* Photo on top, buttons below */
+        gap: 3rem;
+    }
+    
+    .contact-photo {
+        width: 200px;
+        height: 200px;
+        margin: 0 auto;
+    }
     /* HIDE desktop navigation on mobile */
     .nav-links {
         display: none;
@@ -886,32 +933,40 @@
     </section>
 
     <div class="divider"></div>
+<section id="contact" class="contact">
+    <div class="contact-content">
+        <div class="section-label">Get in touch</div>
+        <h2>Let's discuss your project or career goals</h2>
+        <p class="section-description">
+            Whether you need technical consulting or career coaching, I'm here to help. 
+            Reach out to schedule a consultation.
+        </p>
 
-     <section id="contact" class="contact">
-        <div class="contact-content">
-            <div class="section-label">Get in touch</div>
-            <h2>Let's discuss your project or career goals</h2>
-            <p class="section-description">
-                Whether you need technical consulting or career coaching, I'm here to help. 
-                Reach out to schedule a consultation.
-            </p>
-
+        <!-- Wrapper with photo on RIGHT -->
+        <div class="contact-wrapper">
+            <!-- Contact methods on LEFT -->
             <div class="contact-methods">
-                <div class="contact-item">
+                <a href="mailto:hello@westtechsolutions.com" class="contact-item">
                     <h4>Email</h4>
-                    <a href="mailto:david@westtechsolutions.net">david@westtechsolutions.net</a>
-                </div>
-                <div class="contact-item">
+                    <div>david@westtechsolutions.net</div>
+                </a>
+                <a href="https://linkedin.com/in/davidwesttech" target="_blank" class="contact-item">
                     <h4>LinkedIn</h4>
-                    <a href="https://linkedin.com/in/davidwesttech" target="_blank">Connect with me</a>
-                </div>
-                <div class="contact-item">
+                    <div>Connect with me</div>
+                </a>
+                <a href="#contact" class="contact-item">
                     <h4>Schedule</h4>
-                    <a href="#contact">Book a consultation</a>
-                </div>
+                    <div>Book a consultation</div>
+                </a>
+            </div>
+
+            <!-- Photo on RIGHT -->
+            <div class="contact-photo">
+                <img src="headshot.jpg">
             </div>
         </div>
-    </section>
+    </div>
+</section>
 <!-- Contact Form Modal -->
 <div id="contactModal" class="modal">
     <div class="modal-content">
