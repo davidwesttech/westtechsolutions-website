@@ -338,7 +338,7 @@
             color: var(--accent-dim);
         }
 
-        /* Contact Section */
+       /* Contact Section */
         .contact {
             padding: 8rem 6%;
         }
@@ -355,29 +355,34 @@
         }
 
         .contact-item {
-    border: 1px solid var(--border);
-    transition: all 0.4s ease;
-}
+            padding: 2rem;
+            border: 1px solid var(--border);
+            transition: border-color 0.3s ease;
+        }
 
-.contact-item:hover {
-    border-color: var(--accent-dim);
-}
+        .contact-item:hover {
+            border-color: var(--accent-dim);
+        }
 
-.contact-item a {
-    display: block;  /* Add this - makes link fill the box */
-    padding: 2.5rem;  /* Move padding from .contact-item to the link */
-    color: var(--text-primary);
-    text-decoration: none;
-    font-size: 1.1rem;
-    transition: color 0.3s ease;
-    width: 100%;  /* Add this */
-    height: 100%;  /* Add this */
-}
+        .contact-item h4 {
+            font-size: 0.85rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+            font-family: 'JetBrains Mono', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
 
-.contact-item a:hover {
-    color: var(--accent);
-}
+        .contact-item a {
+            color: var(--text-primary);
+            text-decoration: none;
+            font-size: 1.1rem;
+            transition: color 0.3s ease;
+        }
 
+        .contact-item a:hover {
+            color: var(--accent);
+        }
         /* Footer */
         footer {
             padding: 4rem 6%;
