@@ -403,7 +403,17 @@
         .footer-links a:hover {
             color: var(--accent);
         }
-       /* Responsive */
+/* Mobile menu button - hidden by default */
+.mobile-menu-btn {
+    display: none;
+}
+
+/* Mobile menu overlay - hidden by default */
+.mobile-menu {
+    display: none;
+}
+
+/* Responsive */
 @media (max-width: 968px) {
     nav {
         padding: 1.5rem 5%;
@@ -440,21 +450,20 @@
         text-align: center;
     }
 
-    /* Make service grid single column on tablets */
     .service-grid {
         grid-template-columns: 1fr;
     }
 }
 
 @media (max-width: 640px) {
-    /* Hide navigation links on mobile */
+    /* HIDE desktop navigation on mobile */
     .nav-links {
         display: none;
     }
 
-    /* Mobile hamburger menu button */
+    /* SHOW hamburger button on mobile */
     .mobile-menu-btn {
-        display: block !important;
+        display: block;
         background: transparent;
         border: 1px solid var(--accent);
         color: var(--accent);
@@ -464,9 +473,8 @@
         line-height: 1;
     }
 
-    /* Mobile menu overlay */
+    /* Mobile menu styles */
     .mobile-menu {
-        display: none;
         position: fixed;
         top: 0;
         left: 0;
@@ -500,7 +508,6 @@
         cursor: pointer;
     }
 
-    /* Make modal full-screen on mobile */
     .modal-content {
         width: 100%;
         height: 100vh;
@@ -520,7 +527,6 @@
         gap: 1rem;
     }
 
-    /* Reduce padding on mobile */
     .services, .about, .contact {
         padding-top: 4rem;
         padding-bottom: 4rem;
@@ -529,6 +535,7 @@
     .service-block {
         margin-bottom: 4rem;
     }
+}
 
     /* Smaller headings on mobile */
     h1 {
@@ -701,16 +708,29 @@
     </style>
 </head>
 <body>
-    <nav>
-        <div class="logo">West Tech Solutions</div>
-        <ul class="nav-links">
-            <li><a href="#consulting">Consulting</a></li>
-            <li><a href="#coaching">Coaching</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#contact">Contact</a></li>
-        </ul>
-    </nav>
+   <nav>
+    <div class="logo">West Tech</div>
+    
+    <!-- Desktop Navigation (always visible on desktop) -->
+    <ul class="nav-links">
+        <li><a href="#consulting">Consulting</a></li>
+        <li><a href="#coaching">Coaching</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+    
+    <!-- Mobile Menu Button (only shows on mobile) -->
+    <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+</nav>
 
+<!-- Mobile Menu Overlay -->
+<div class="mobile-menu" id="mobileMenu">
+    <button class="mobile-menu-close" onclick="toggleMobileMenu()">×</button>
+    <a href="#consulting" onclick="toggleMobileMenu()">Consulting</a>
+    <a href="#coaching" onclick="toggleMobileMenu()">Coaching</a>
+    <a href="#about" onclick="toggleMobileMenu()">About</a>
+    <a href="#contact" onclick="toggleMobileMenu()">Contact</a>
+</div>
     <section class="hero">
         <div class="hero-content">
             <h1>Building cloud infrastructure.<br>Advancing tech careers.</h1>
