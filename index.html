@@ -34,8 +34,7 @@
             line-height: 1.7;
             font-weight: 300;
         }
-
-        /* Navigation */
+/* Navigation */
         nav {
             position: fixed;
             top: 0;
@@ -57,6 +56,29 @@
             color: var(--accent);
             letter-spacing: 0.5px;
         }
+.nav-links {
+    display: flex;
+    flex-direction: row;  /* Make sure this is row, not column */
+    gap: 3rem;
+    list-style: none;
+    align-items: center;  /* Add this */
+}
+
+.nav-links li {
+    display: inline-block;  /* Add this */
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent);
+}
 <nav>  
     <!-- Add this hamburger button -->
     <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
@@ -709,7 +731,7 @@
 </head>
 <body>
    <nav>
-    <div class="logo">West Tech</div>
+    <div class="logo">West Tech Solutions</div>
     
     <!-- Desktop Navigation (always visible on desktop) -->
     <ul class="nav-links">
