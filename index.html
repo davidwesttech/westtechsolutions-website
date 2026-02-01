@@ -34,6 +34,19 @@
             line-height: 1.7;
             font-weight: 300;
         }
+        /* Force contact item colors */
+a.contact-item,
+a.contact-item:link,
+a.contact-item:visited,
+a.contact-item:active {
+    color: var(--text-secondary);
+    text-decoration: none;
+}
+
+a.contact-item div {
+    color: var(--text-secondary) !important;
+    font-weight: 300;
+}
 /* Navigation */
         nav {
             position: fixed;
@@ -951,7 +964,7 @@
         <div class="contact-wrapper">
             <!-- Contact methods on LEFT -->
             <div class="contact-methods">
-                <a href="mailto:hello@westtechsolutions.com" class="contact-item">
+                <a href="mailto:david@westtechsolutions.net" class="contact-item">
                     <h4>Email</h4>
                     <div>david@westtechsolutions.net</div>
                 </a>
